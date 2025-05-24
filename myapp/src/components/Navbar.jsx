@@ -5,10 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div><Box sx={{ flexGrow: 1 }}>
+    <div>
+      <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -21,13 +23,14 @@ const Navbar = () => {
            
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            User Log
+            Product Management 
           </Typography>
           <Link to={'/'}><Button style={{color:'white'}}>Home</Button></Link>
           <Link to={'/add'}><Button style={{color:'white'}}>Add</Button></Link>
         </Toolbar>
       </AppBar>
-    </Box></div>
+    </Box>
+    </div>
   )
 }
 
