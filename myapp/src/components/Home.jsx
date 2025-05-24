@@ -9,6 +9,14 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios'
 
 const Home = () => {
+  const [products,setProducts]=useState([]);
+  useEffect(()=>{
+    axios.get('').then((res)=>{
+      setProducts(res.data);
+    }).catch((error)=>{
+      console.log(error);
+    });
+  })
   return (
     <div>
         <TableContainer component={Paper}>
@@ -16,24 +24,26 @@ const Home = () => {
         <TableHead>
           <TableRow>
             <TableCell>UserId</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Email</TableCell>
-            <TableCell align="right">Email</TableCell>
+            <TableCell align="right">Product Name</TableCell>
+            <TableCell align="right">Price</TableCell>
+            <TableCell align="right">Category</TableCell>
+            <TableCell align="right">Image</TableCell>
             
           </TableRow>
         </TableHead>
         <TableBody>
-          {users.map((row) => (
+          {product.map((row) => (
             <TableRow
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.userId}
+                {row.name}
               </TableCell>
-              <TableCell align="right">{row.userName}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
+              <TableCell align="right">{row.price}</TableCell>
+              <TableCell align="right">{row.category}</TableCell>
+              <TableCell align="right">
+                <img src={row.image} alt="" width="50"/></TableCell>
               
               
             </TableRow>
