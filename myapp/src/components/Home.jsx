@@ -7,7 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios'
-import Button from '@mui/material/Button';
 
 const Home = () => {
   return (
@@ -18,6 +17,7 @@ const Home = () => {
           <TableRow>
             <TableCell>UserId</TableCell>
             <TableCell align="right">Name</TableCell>
+            <TableCell align="right">Email</TableCell>
             <TableCell align="right">Email</TableCell>
             
           </TableRow>
@@ -33,17 +33,9 @@ const Home = () => {
               </TableCell>
               <TableCell align="right">{row.userName}</TableCell>
               <TableCell align="right">{row.email}</TableCell>
-              <TableCell align="right"><Button variant="contained" onClick={()=>{
-                updateUser(row)
-              }} color="success">
-             Edit
-              </Button></TableCell>
-                <TableCell align="right"><Button variant="contained" onClick={()=>{
-                  deleteUser(row._id)
-                }} color="error">
-             Delete
-          </Button></TableCell>
-             
+              <TableCell align="right">{row.email}</TableCell>
+              
+              
             </TableRow>
           ))}
         </TableBody>
