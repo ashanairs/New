@@ -9,10 +9,10 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios'
 
 const Home = () => {
-  const [products,setProducts]=useState([]);
+  const [product,setProduct]=useState([]);
   useEffect(()=>{
     axios.get('https://fakestoreapi.com/products').then((res)=>{
-      setProducts(res.data);
+      setProducts(res.data.product);
     }).catch((error)=>{
       console.log(error);
     });
