@@ -11,7 +11,7 @@ import axios from 'axios'
 const Home = () => {
   const [products,setProducts]=useState([]);
   useEffect(()=>{
-    axios.get('').then((res)=>{
+    axios.get('https://fakestoreapi.com/products').then((res)=>{
       setProducts(res.data);
     }).catch((error)=>{
       console.log(error);
